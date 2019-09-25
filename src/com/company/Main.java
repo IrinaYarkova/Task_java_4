@@ -1,53 +1,30 @@
 package com.company;
 
+import com.company.Present.Chocolate;
+import com.company.Present.Lollipop;
+import com.company.Present.Present;
+
 public class Main {
     public static void main(String[] args) {
 
-        //Создание сладостей
-        Sweet sw1 = new Sweet(1, "Конфета", 100, 50);
-        Sweet sw2 = new Sweet(2, "Леденец", 50, 100);
-        Sweet sw3 = new Sweet(3, "Шоколадка", 150, 200);
-        Sweet sw4 = new Sweet(4, "Пряник", 70, 80);
-        Sweet sw5 = new Sweet(5, "Печенье", 120, 100);
+        Present somePresent = new Present();
 
-        int allWeight = sw1.getWeight() + sw2.getWeight() + sw3.getWeight() + sw4.getWeight() + sw5.getWeight();
-        int allPrice = sw1.getPrice() + sw2.getPrice() + sw3.getPrice() + sw4.getPrice() + sw5.getPrice();
+        Lollipop lollipop1 = new Lollipop("Чупа-Чупс", 100, 200, "клубничный");
+        Lollipop lollipop2 = new Lollipop("Петушок", 50, 250, "лимонный");
+        Chocolate chocolate1 = new Chocolate("Аленка", 200, 350, "молочный");
+        Chocolate chocolate2 = new Chocolate("Милка", 250, 400, "горький");
 
-        System.out.println("Формируем подарок... ");
-        System.out.println("Вес подарка: " + allWeight + "г");
-        System.out.println("Стоимость подарка: " + allPrice + "р");
-        System.out.println("В подарке: ");
-        System.out.println(sw1.getName() + ", " + sw1.getWeight() + "г стоимостью " + sw1.getPrice() + "р");
-        System.out.println(sw2.getName() + ", " + sw2.getWeight() + "г стоимостью " + sw2.getPrice() + "р");
-        System.out.println(sw3.getName() + ", " + sw3.getWeight() + "г стоимостью " + sw3.getPrice() + "р");
-        System.out.println(sw4.getName() + ", " + sw4.getWeight() + "г стоимостью " + sw4.getPrice() + "р");
-        System.out.println(sw5.getName() + ", " + sw5.getWeight() + "г стоимостью " + sw5.getPrice() + "р");
-    }
+        Present[] box = {lollipop1, lollipop2, chocolate1, chocolate2};
 
-    public static class Sweet {
-        private int id; //уникальный параметр
-        private String name;
-        private int weight;
-        private int price;
+        System.out.println("Формируем подарок...");
+        System.out.println("\nОбщий вес подарка: " + somePresent.getAllWeight(box));
+        System.out.println("Итоговая цена подарка : " + somePresent.getAllPrice(box));
+        System.out.println("\nВ подарке: ");
 
-        public Sweet(int id, String name, int weight, int price) {
-            this.id = id;
-            this.name = name;
-            this.weight = weight;
-            this.price = price;
+        for (int i=0; i<box.length; i++ ) {
+            System.out.println(box[i].toString());
         }
 
-        public String getName() {
-            return name;
-        }
-
-        public int getWeight() {
-            return weight;
-        }
-
-        public int getPrice() {
-            return price;
-        }
 
     }
 
