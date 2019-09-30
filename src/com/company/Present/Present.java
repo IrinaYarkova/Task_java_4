@@ -44,20 +44,5 @@ public class Present {
             return  name + " -  " + weight + "г стоимостью " + price + "р";
         }
 
-        public int getAllPrice(Present[] array){
-            int allPrice = 0;
-            for (int i=0; i < array.length; i++){
-                allPrice += array[i].getPrice();
-            }
-            return allPrice;
-        }
-
-        public int getAllWeight(Present[] array){
-            int allWeight = 0;
-            for (int i=0; i < array.length; i++){
-                allWeight += array[i].getWeight();
-            }
-            return allWeight;
-        }
 
 }
